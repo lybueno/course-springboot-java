@@ -88,6 +88,14 @@ public class Order {
         return itens;
     }
 
+    public Double getTotal(){
+        double sum = 0.0;
+        for(OrderItem x : itens){
+            sum += x.getSubTotal();
+        }
+        return sum;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
